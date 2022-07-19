@@ -1,22 +1,22 @@
 let flowerImages = [];
 let catImages = [];
 
-function preload() {
-    for (let i = 0; i < 5000; i++) {
-        flowerImages[i] = loadImage(`data/flower (${i + 1}).png`);
-        catImages[i] = loadImage(`data/cat (${i + 1}).png`);
-    }
-}
+// function preload() {
+//     for (let i = 0; i < 200; i++) {
+//         flowerImages[i] = loadImage(`data/flower (${i + 1}).png`);
+//         catImages[i] = loadImage(`data/cat (${i + 1}).png`);
+//     }
+// }
 
 let imageClassifier;
 
 function setup() {
-    // for (let i = 0; i < 10000; i++) {
-    //     flowerImages[i] = loadImage(`data/flower (${i + 1}).png`);
-    //     catImages[i] = loadImage(`data/cat (${i + 1}).png`);
-    // }
+for (let i = 0; i < 50; i++) {
+    flowerImages[i] = loadImage(`data/flower (${i + 1}).png`);
+    catImages[i] = loadImage(`data/cat (${i + 1}).png`);
+}
 
-    createCanvas(400, 400);
+createCanvas(400, 400);
     // image(flowerImages[0], 0, 0, width, height);
 
 const IMAGE_WIDTH = 64;
@@ -42,6 +42,6 @@ imageClassifier.train({ epochs: 50 }, finishedTraining);
 }
 
 function finishedTraining() {
-    console.log('finished training!');
+    console.log('Finished training!');
     imageClassifier.save();
 }
